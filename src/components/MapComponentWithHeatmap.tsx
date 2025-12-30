@@ -112,6 +112,40 @@ const MapComponentWithHeatmap: React.FC = () => {
     }
   };
 
+  // Offset nearby markers so they don't overlap
+  const getOffsetPosition = (report: Report, allReports: Report[]) => {
+    const PROXIMITY_THRESHOLD = 0.0005; // ~50 meters at equator
+    const OFFSET = 0.00015; // ~15 meters
+
+    // Find all reports near this one
+    const nearbyCount = allReports.filter(
+      (r) =>
+        Math.abs(r.location.lat - report.location.lat) < PROXIMITY_THRESHOLD &&
+        Math.abs(r.location.lng - report.location.lng) < PROXIMITY_THRESHOLD
+    ).length;
+
+    if (nearbyCount <= 1) {
+      return report.location; // No offset needed
+    }
+
+    // Calculate position in grid pattern
+    const nearbyIndex = allReports
+      .filter(
+        (r) =>
+          Math.abs(r.location.lat - report.location.lat) < PROXIMITY_THRESHOLD &&
+          Math.abs(r.location.lng - report.location.lng) < PROXIMITY_THRESHOLD
+      )
+      .findIndex((r) => r.id === report.id);
+
+    const row = Math.floor(nearbyIndex / 2);
+    const col = nearbyIndex % 2;
+
+    return {
+      lat: report.location.lat + (row * OFFSET - OFFSET / 2),
+      lng: report.location.lng + (col * OFFSET - OFFSET / 2),
+    };
+  };
+
   const generateHeatmapData = () => {
     const heatmapPoints: google.maps.visualization.WeightedLocation[] = [];
 
@@ -309,7 +343,7 @@ const MapComponentWithHeatmap: React.FC = () => {
             reports.map((report) => (
               <Marker
                 key={report.id}
-                position={report.location}
+                position={getOffsetPosition(report, reports)}
                 onClick={() => setSelectedReport(report)}
                 icon={{
                   url: getMarkerColor(report.severity),

@@ -39,16 +39,16 @@ const DESCRIPTIONS = [
   'Severe road damage affecting public safety',
 ];
 
-// Placeholder image URLs (using a service that provides sample images)
+// Placeholder image URLs (data URIs - simple colored squares)
 const SAMPLE_IMAGES = [
-  'https://images.unsplash.com/photo-1581578731548-c64695c952952?w=500&h=500',
-  'https://images.unsplash.com/photo-1578601471091-bb4a63360ae0?w=500&h=500',
-  'https://images.unsplash.com/photo-1581578731548-c64695c952952?w=500&h=500',
-  'https://images.unsplash.com/photo-1581092918056-0c4c3004cd22?w=500&h=500',
-  'https://images.unsplash.com/photo-1581578731548-c64695c952952?w=500&h=500',
-  'https://images.unsplash.com/photo-1590674899462-13baf56d988e?w=500&h=500',
-  'https://images.unsplash.com/photo-1581092918056-0c4c3004cd22?w=500&h=500',
-  'https://images.unsplash.com/photo-1578601471091-bb4a63360ae0?w=500&h=500',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%23FF6B6B" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EPothole%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%23FFA500" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3ERoad Damage%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%234ECDC4" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EStreet Light%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%238B4513" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EGarbage%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%234169E1" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EWater Leak%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%236A5ACD" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EDrainage%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%23DC143C" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3ETraffic Sign%3C/text%3E%3C/svg%3E',
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="500"%3E%3Crect fill="%2398D8C8" width="500" height="500"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white"%3EPavement%3C/text%3E%3C/svg%3E',
 ];
 
 export const seedSampleReports = async (userId: string) => {

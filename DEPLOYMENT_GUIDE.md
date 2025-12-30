@@ -1,4 +1,4 @@
-# 🚀 CivicLens - Deployment & Demo Guide
+﻿# CivicLens - Deployment & Demo Guide
 
 ## **Quick Start (Development)**
 
@@ -78,7 +78,7 @@ npm run dev
 
 ## **Feature Testing Checklist**
 
-### **✅ Citizen Reporting Flow**
+### ** Citizen Reporting Flow**
 - [ ] Sign in with Google account
 - [ ] Take photo using camera
 - [ ] Upload photo from gallery
@@ -95,7 +95,7 @@ npm run dev
 - [ ] Share via Email draft
 - [ ] Share on WhatsApp
 
-### **✅ Map & Upvote Features**
+### ** Map & Upvote Features**
 - [ ] Navigate to home page
 - [ ] See all reported issues as map pins
 - [ ] Click pins to view details
@@ -104,7 +104,7 @@ npm run dev
 - [ ] Verify upvote count increases
 - [ ] Toggle between Map View and Heatmap
 
-### **✅ Heatmap Analytics**
+### ** Heatmap Analytics**
 - [ ] Click heatmap toggle button
 - [ ] See heat layer overlay on map
 - [ ] Verify red zones = high issue concentration
@@ -112,14 +112,14 @@ npm run dev
 - [ ] Toggle back to map view
 - [ ] Verify markers still visible in map mode
 
-### **✅ Voice Input**
-- [ ] In report page, click "🎤 Record Voice Description"
+### ** Voice Input**
+- [ ] In report page, click " Record Voice Description"
 - [ ] Speak your issue description
 - [ ] See transcribed text below microphone
 - [ ] Click "Use as Description"
 - [ ] Verify text appears in description field
 
-### **✅ Admin Dashboard**
+### ** Admin Dashboard**
 - [ ] Navigate to /admin
 - [ ] Enter credentials: admin@gov.in / CivicLens2024Admin
 - [ ] View dashboard with 3 columns (To Do, In Progress, Done)
@@ -133,7 +133,7 @@ npm run dev
   - Show count of issues by status
 - [ ] Logout from admin panel
 
-### **✅ Social Sharing**
+### ** Social Sharing**
 - [ ] Submit a high-severity issue
 - [ ] On success page, click "Tweet to Municipal Corp"
 - [ ] Verify Twitter intent window opens
@@ -156,12 +156,12 @@ npm run dev
 ### **Features by Browser**
 | Feature | Chrome | Firefox | Safari | Edge |
 |---------|--------|---------|--------|------|
-| Maps API | ✅ | ✅ | ✅ | ✅ |
-| Google Sign-In | ✅ | ✅ | ✅ | ✅ |
-| Camera/Photo | ✅ | ✅ | ✅ | ✅ |
-| Voice Input | ✅ | ❌ | ⚠️ | ✅ |
-| Geolocation | ✅ | ✅ | ✅ | ✅ |
-| Heatmap Layer | ✅ | ✅ | ✅ | ✅ |
+| Maps API | | | | |
+| Google Sign-In | | | | |
+| Camera/Photo | | | | |
+| Voice Input | |  |  | |
+| Geolocation | | | | |
+| Heatmap Layer | | | | |
 
 ---
 
@@ -184,16 +184,16 @@ npm run dev
 ### **Firestore Database Structure**
 ```
 reports/
-├── {reportId}
-│   ├── imageUrl: string (base64 compressed image)
-│   ├── location: {lat, lng}
-│   ├── category: string (Issue type)
-│   ├── severity: string (High/Medium/Low)
-│   ├── description: string
-│   ├── timestamp: timestamp
-│   ├── userId: string
-│   ├── upvotes: array (userId list)
-│   └── status: string (todo/in-progress/done)
+""" {reportId}
+"   """ imageUrl: string (base64 compressed image)
+"   """ location: {lat, lng}
+"   """ category: string (Issue type)
+"   """ severity: string (High/Medium/Low)
+"   """ description: string
+"   """ timestamp: timestamp
+"   """ userId: string
+"   """ upvotes: array (userId list)
+"   """" status: string (todo/in-progress/done)
 ```
 
 ---
@@ -330,4 +330,8 @@ VITE_GEMINI_KEY=<your_gemini_api_key>
 
 ---
 
-**Ready to Demo CivicLens? Let's go! 🚀**
+**Ready to Demo CivicLens? Let's go! **
+
+
+
+

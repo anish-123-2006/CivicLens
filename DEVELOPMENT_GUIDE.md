@@ -1,4 +1,4 @@
-# CivicLens - Development Guide
+﻿# CivicLens - Development Guide
 
 ## Getting Started
 
@@ -31,15 +31,15 @@ npm run dev
 
 ```
 src/
-├── components/          # Reusable React components
-├── config/             # Configuration files (Firebase, etc)
-├── contexts/           # React Context for state
-├── pages/              # Full page components (routes)
-├── services/           # External API services
-├── types/              # TypeScript type definitions
-├── utils/              # Helper functions
-├── App.jsx             # Main app component
-└── main.jsx            # Entry point
+""" components/          # Reusable React components
+""" config/             # Configuration files (Firebase, etc)
+""" contexts/           # React Context for state
+""" pages/              # Full page components (routes)
+""" services/           # External API services
+""" types/              # TypeScript type definitions
+""" utils/              # Helper functions
+""" App.jsx             # Main app component
+"""" main.jsx            # Entry point
 ```
 
 ## Key Components
@@ -412,14 +412,14 @@ docker run -p 3000:3000 civiclens
 Always use TypeScript for type safety:
 
 ```typescript
-// ✅ Good
+// Good
 interface Report {
   id: string;
   severity: 'High' | 'Medium' | 'Low';
 }
 
-// ❌ Avoid
-const report: any = { ... };
+//  Avoid
+const report: any = { };
 ```
 
 ### Naming
@@ -449,9 +449,7 @@ export const analyzeImage = async (file: File) => {
 git checkout -b feature/new-feature
 
 # Make changes
-# ...
-
-# Commit
+# # Commit
 git add .
 git commit -m "feat: add new feature"
 
@@ -473,3 +471,7 @@ git push origin feature/new-feature
 ---
 
 **Need help?** Check the main README.md or open an issue!
+
+
+
+

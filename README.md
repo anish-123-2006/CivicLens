@@ -1,8 +1,8 @@
-# CivicLens - AI-Powered Civic Issue Reporting PWA
+﻿# CivicLens - AI-Powered Civic Issue Reporting PWA
 
 A Progressive Web App that empowers citizens to report civic issues (potholes, garbage, broken infrastructure) using AI-powered image analysis and real-time mapping.
 
-## 🚀 Features
+## Features
 
 - **AI-Powered Analysis**: Uses Google Gemini AI to automatically analyze images and categorize civic issues
 - **Real-time Map Dashboard**: Interactive Google Maps interface showing all reported issues with color-coded severity markers
@@ -12,7 +12,7 @@ A Progressive Web App that empowers citizens to report civic issues (potholes, g
 - **Responsive Design**: Mobile-first design using Material UI
 - **PWA Ready**: Installable as a mobile app
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 with Vite
 - **UI Framework**: Material UI (MUI)
@@ -21,7 +21,7 @@ A Progressive Web App that empowers citizens to report civic issues (potholes, g
 - **AI**: Google Gemini API (Generative AI)
 - **Routing**: React Router DOM
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have:
 
@@ -30,7 +30,7 @@ Before you begin, ensure you have:
 3. **Google Maps API Key** ([Get one](https://developers.google.com/maps/documentation/javascript/get-api-key))
 4. **Google Gemini API Key** ([Get one](https://makersuite.google.com/app/apikey))
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### 1. Install Dependencies
 
@@ -43,10 +43,10 @@ npm install
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Create a new project or select an existing one
 3. Enable the following services:
-   - **Authentication** → Enable Google Sign-in provider
-   - **Firestore Database** → Create database in production mode
-   - **Storage** → Enable Firebase Storage
-4. Go to Project Settings → General → Your apps
+   - **Authentication** ' Enable Google Sign-in provider
+   - **Firestore Database** ' Create database in production mode
+   - **Storage** ' Enable Firebase Storage
+4. Go to Project Settings ' General ' Your apps
 5. Copy your Firebase configuration
 
 ### 3. Set Up Environment Variables
@@ -76,7 +76,7 @@ VITE_GEMINI_KEY=your_gemini_api_key_here
 
 ### 4. Configure Firestore Rules
 
-In Firebase Console → Firestore Database → Rules, add:
+In Firebase Console ' Firestore Database ' Rules, add:
 
 ```javascript
 rules_version = '2';
@@ -93,7 +93,7 @@ service cloud.firestore {
 
 ### 5. Configure Storage Rules
 
-In Firebase Console → Storage → Rules, add:
+In Firebase Console ' Storage ' Rules, add:
 
 ```javascript
 rules_version = '2';
@@ -115,7 +115,7 @@ npm run dev
 
 The app will be available at `http://localhost:5173`
 
-## 📱 Usage Guide
+## +/- Usage Guide
 
 ### For Users:
 
@@ -147,7 +147,7 @@ npm run preview
 npm run lint
 ```
 
-## 📊 Data Structure
+## Data Structure
 
 ### Firestore Collection: `reports`
 
@@ -166,7 +166,7 @@ npm run lint
 }
 ```
 
-## 🎨 Key Components
+## Key Components
 
 - **AuthContext**: Manages authentication state
 - **MapComponent**: Displays Google Map with issue markers
@@ -174,14 +174,14 @@ npm run lint
 - **ProtectedRoute**: Guards routes requiring authentication
 - **geminiService**: Interfaces with Google Gemini AI
 
-## 🔒 Security Notes
+## Security Notes
 
 - Never commit `.env` file to version control
 - Restrict API keys to specific domains in production
 - Enable Firebase App Check for additional security
 - Review Firestore and Storage rules before production deployment
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Map not loading
 - Verify `VITE_GOOGLE_MAPS_KEY` is correct
@@ -201,10 +201,14 @@ npm run lint
 - Verify `VITE_GEMINI_KEY` is valid
 - Check API quota limits
 
-## 📄 License
+## License
 
 MIT License
 
 ---
 
-Built with ❤️ using Google Cloud Technologies
+Built with  using Google Cloud Technologies
+
+
+
+

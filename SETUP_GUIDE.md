@@ -1,30 +1,30 @@
-# CivicLens - Quick Start Guide
+﻿# CivicLens - Quick Start Guide
 
-## 🚀 Get Started in 5 Minutes
+## Get Started in 5 Minutes
 
 ### Step 1: Create Firebase Project
 1. Visit https://console.firebase.google.com
-2. Click "Create Project" → CivicLens
+2. Click "Create Project" ' CivicLens
 3. Enable Analytics (optional)
 4. Click "Create"
 
 ### Step 2: Set Up Firebase Services
 
 **Authentication:**
-- Go to Firestore Database → Rules
+- Go to Firestore Database ' Rules
 - Build with Firestore (select production mode)
-- Go to Authentication → Sign-in method
+- Go to Authentication ' Sign-in method
 - Enable Google provider
 
 **Storage:**
-- Go to Storage → Create bucket (default settings)
+- Go to Storage ' Create bucket (default settings)
 
 ### Step 3: Get API Keys
 
 **Firebase Keys:**
-1. Go to Settings → Project Settings
+1. Go to Settings ' Project Settings
 2. Scroll to "Your apps" section
-3. Click Web icon → Copy Firebase config
+3. Click Web icon ' Copy Firebase config
 4. Extract: apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId
 
 **Google Maps API:**
@@ -57,37 +57,37 @@ npm run dev
 
 Visit `http://localhost:5173`
 
-## 📋 Project Structure
+## Project Structure
 
 ```
 vite-project/
-├── src/
-│   ├── components/
-│   │   ├── MapComponent.tsx      # Google Maps display
-│   │   └── ProtectedRoute.tsx    # Auth protection
-│   ├── config/
-│   │   └── firebaseConfig.ts     # Firebase setup
-│   ├── contexts/
-│   │   └── AuthContext.tsx       # Auth state management
-│   ├── pages/
-│   │   ├── Home.tsx              # Map dashboard
-│   │   ├── Login.tsx             # Authentication page
-│   │   └── Report.tsx            # Report creation
-│   ├── services/
-│   │   └── geminiService.ts      # AI analysis
-│   ├── types/
-│   │   └── index.ts              # TypeScript types
-│   ├── App.jsx                   # Main routing
-│   └── main.jsx                  # Entry point
-├── public/
-│   └── manifest.json             # PWA manifest
-├── .env.example                  # Template env file
-├── index.html                    # HTML template
-├── package.json                  # Dependencies
-└── vite.config.js               # Vite config
+""" src/
+"   """ components/
+"   "   """ MapComponent.tsx      # Google Maps display
+"   "   """" ProtectedRoute.tsx    # Auth protection
+"   """ config/
+"   "   """" firebaseConfig.ts     # Firebase setup
+"   """ contexts/
+"   "   """" AuthContext.tsx       # Auth state management
+"   """ pages/
+"   "   """ Home.tsx              # Map dashboard
+"   "   """ Login.tsx             # Authentication page
+"   "   """" Report.tsx            # Report creation
+"   """ services/
+"   "   """" geminiService.ts      # AI analysis
+"   """ types/
+"   "   """" index.ts              # TypeScript types
+"   """ App.jsx                   # Main routing
+"   """" main.jsx                  # Entry point
+""" public/
+"   """" manifest.json             # PWA manifest
+""" .env.example                  # Template env file
+""" index.html                    # HTML template
+""" package.json                  # Dependencies
+"""" vite.config.js               # Vite config
 ```
 
-## 🔑 Environment Variables Reference
+## Environment Variables Reference
 
 ```env
 # Firebase API Configuration
@@ -103,7 +103,7 @@ VITE_GOOGLE_MAPS_KEY=AIzaSy...
 VITE_GEMINI_KEY=AIzaSy...
 ```
 
-## 🧪 Testing the App
+## Testing the App
 
 ### 1. Test Authentication
 - Click "Sign in with Google"
@@ -121,7 +121,7 @@ VITE_GEMINI_KEY=AIzaSy...
 - Check if your report appears on the map
 - Click marker to see details
 
-## ⚙️ Deployment
+## Deployment
 
 ### Firebase Hosting
 
@@ -143,7 +143,7 @@ vercel
 
 Don't forget to add environment variables to your hosting dashboard!
 
-## 🐛 Common Issues & Solutions
+## Common Issues & Solutions
 
 | Issue | Solution |
 |-------|----------|
@@ -152,19 +152,19 @@ Don't forget to add environment variables to your hosting dashboard!
 | "Image upload fails" | Check Storage rules, verify firebaseapp.com domain |
 | "AI not working" | Check VITE_GEMINI_KEY, API quota, image format |
 
-## 📱 PWA Installation
+## +/- PWA Installation
 
 ### On Mobile:
 1. Open app in Chrome/Safari
-2. Click menu → "Install app"
+2. Click menu ' "Install app"
 3. App appears on home screen
 
 ### On Desktop:
 1. Open app in Chrome
-2. Click address bar icon → "Install"
+2. Click address bar icon ' "Install"
 3. App launches in window mode
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Customize branding**: Edit colors in App.tsx theme
 2. **Add more issue types**: Update Gemini prompt in geminiService.ts
@@ -172,7 +172,7 @@ Don't forget to add environment variables to your hosting dashboard!
 4. **Add notifications**: Integrate Firebase Cloud Messaging
 5. **Advanced analytics**: Add Firebase Analytics
 
-## 📚 Resources
+## Resources
 
 - [React Docs](https://react.dev)
 - [Firebase Docs](https://firebase.google.com/docs)
@@ -183,3 +183,7 @@ Don't forget to add environment variables to your hosting dashboard!
 ---
 
 **Questions?** Check the main README.md for detailed setup instructions!
+
+
+
+

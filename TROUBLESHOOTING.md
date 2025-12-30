@@ -1,6 +1,6 @@
-# CivicLens - Troubleshooting Guide
+﻿# CivicLens - Troubleshooting Guide
 
-## 🔍 Quick Diagnosis
+## Quick Diagnosis
 
 ### App Won't Start
 ```bash
@@ -31,7 +31,7 @@ Check:
 
 ---
 
-## 🐛 Common Issues & Solutions
+## Common Issues & Solutions
 
 ### Issue: "Google is not defined"
 **Cause**: Maps API script not loaded  
@@ -80,59 +80,59 @@ console.log(result);
 
 ---
 
-## 🧪 Testing Checklist
+## Testing Checklist
 
 ### Authentication
 ```
-□ Can sign in with Google
-□ Can see user info in AppBar
-□ Can sign out
-□ /report route protected
-□ Redirects to /login when not authenticated
+- Can sign in with Google
+- Can see user info in AppBar
+- Can sign out
+- /report route protected
+- Redirects to /login when not authenticated
 ```
 
 ### Reporting
 ```
-□ Can access /report when logged in
-□ Camera button works (or file input fallback)
-□ Image preview shows
-□ AI analysis happens (check console)
-□ Form auto-fills from AI
-□ Can edit form values
-□ Location captured
-□ Submit button works
-□ Redirects to home on success
+- Can access /report when logged in
+- Camera button works (or file input fallback)
+- Image preview shows
+- AI analysis happens (check console)
+- Form auto-fills from AI
+- Can edit form values
+- Location captured
+- Submit button works
+- Redirects to home on success
 ```
 
 ### Map
 ```
-□ Map loads on /
-□ Map centers on user location
-□ Reports show as markers
-□ Markers have correct colors
-□ Can click marker
-□ Info window shows image
-□ Info window shows details
-□ Can close info window
+- Map loads on /
+- Map centers on user location
+- Reports show as markers
+- Markers have correct colors
+- Can click marker
+- Info window shows image
+- Info window shows details
+- Can close info window
 ```
 
 ### Responsive
 ```
-□ Works on mobile (360px)
-□ Works on tablet (768px)
-□ Works on desktop (1920px)
-□ No horizontal scrolling
-□ Touch targets are large
-□ Text is readable
+- Works on mobile (360px)
+- Works on tablet (768px)
+- Works on desktop (1920px)
+- No horizontal scrolling
+- Touch targets are large
+- Text is readable
 ```
 
 ---
 
-## 📊 Debugging with Browser DevTools
+## Debugging with Browser DevTools
 
 ### Check Network Requests
 ```
-F12 → Network tab
+F12 ' Network tab
 - Look for API calls
 - Check response status (200 = OK)
 - Check response content
@@ -140,7 +140,7 @@ F12 → Network tab
 
 ### Check Console Errors
 ```
-F12 → Console tab
+F12 ' Console tab
 - Look for red errors
 - Note error messages
 - Check stack traces
@@ -176,7 +176,7 @@ const { analyzeImage } = await import('./src/services/geminiService');
 
 ---
 
-## 🔧 Environment Variables Troubleshooting
+## Environment Variables Troubleshooting
 
 ### Check Environment Variables Loaded
 ```javascript
@@ -198,27 +198,27 @@ cat .env
 
 ---
 
-## 🔒 Authentication Issues
+## Authentication Issues
 
 ### Sign-in Button Doesn't Work
-1. Check Firebase console → Authentication → Google provider enabled
+1. Check Firebase console ' Authentication ' Google provider enabled
 2. Check .env has all Firebase keys
 3. Check browser console for error message
 4. Try in private/incognito window
 
-### "auth/popup-blocked"
+### auth/popup-blocked"
 - App is blocking popup
 - Sign-in opens in popup window
 - Check browser popup blocker settings
 
-### "auth/invalid-api-key"
+### auth/invalid-api-key"
 - Firebase API key is wrong
 - Copy exact value from Firebase console
 - Don't include quotes or spaces
 
 ---
 
-## 🗺️ Map Issues
+## - Map Issues
 
 ### Map Is Blank
 1. Check if Google Maps API is enabled
@@ -240,9 +240,9 @@ cat .env
 
 ---
 
-## 🤖 Gemini API Issues
+## - Gemini API Issues
 
-### "API key not configured"
+### API key not configured"
 ```bash
 # Add to .env
 VITE_GEMINI_KEY=your_key_here
@@ -251,7 +251,7 @@ VITE_GEMINI_KEY=your_key_here
 npm run dev
 ```
 
-### "Quota exceeded"
+### Quota exceeded"
 1. Check Google AI Studio for quota limits
 2. Wait for quota reset
 3. Reduce request frequency
@@ -263,7 +263,7 @@ npm run dev
 3. Check Gemini API logs
 4. Verify API key is valid
 
-### "Unsupported image format"
+### Unsupported image format"
 - Only supports JPEG, PNG, GIF, WebP
 - Check file extension
 - Try converting image format
@@ -271,7 +271,7 @@ npm run dev
 
 ---
 
-## 💾 Database Issues
+## Database Issues
 
 ### Can't Save Report
 1. Check Firestore exists in Firebase
@@ -293,7 +293,7 @@ npm run dev
 
 ---
 
-## 📱 Mobile Issues
+## +/- Mobile Issues
 
 ### Camera Not Working
 1. Check browser permissions (Settings)
@@ -315,7 +315,7 @@ npm run dev
 
 ---
 
-## 🐳 Docker Issues
+## Docker Issues
 
 ### Build Fails
 ```bash
@@ -340,7 +340,7 @@ docker run -p 3000:3000 civiclens
 
 ---
 
-## 📊 Performance Issues
+## Performance Issues
 
 ### App Loads Slowly
 1. Check network tab (F12)
@@ -362,10 +362,10 @@ docker run -p 3000:3000 civiclens
 
 ---
 
-## 🔐 Security Concerns
+## Security Concerns
 
 ### Secrets in Console
-⚠️ Don't share console output with API keys
+ Don't share console output with API keys
 - API keys visible in console
 - Use incognito window for testing
 - Clear browser history after testing
@@ -383,7 +383,7 @@ git commit -m "Remove .env from tracking"
 
 ---
 
-## 📈 Scaling Issues
+## Scaling Issues
 
 ### Too Many Reports on Map
 - Implement clustering
@@ -399,7 +399,7 @@ git commit -m "Remove .env from tracking"
 
 ---
 
-## 🆘 Still Having Issues?
+## Still Having Issues?
 
 ### Gather Information
 ```bash
@@ -438,7 +438,7 @@ await runAllTests();
 
 ---
 
-## 📋 Debugging Workflow
+## Debugging Workflow
 
 1. **Identify the problem**
    - What's not working?
@@ -470,14 +470,14 @@ await runAllTests();
 
 ---
 
-## 📞 Getting Help
+## Getting Help
 
 ### Before Asking
-1. ✅ Checked the console for errors
-2. ✅ Checked Firebase console
-3. ✅ Verified all .env variables
-4. ✅ Tried restarting dev server
-5. ✅ Checked documentation
+1. Checked the console for errors
+2. Checked Firebase console
+3. Verified all .env variables
+4. Tried restarting dev server
+5. Checked documentation
 
 ### Share Information
 - Error message (full text)
@@ -494,6 +494,10 @@ await runAllTests();
 
 ---
 
-**Most issues are configuration related. Double-check .env first!** ✅
+**Most issues are configuration related. Double-check .env first!** 
 
 *Last Updated: December 30, 2025*
+
+
+
+

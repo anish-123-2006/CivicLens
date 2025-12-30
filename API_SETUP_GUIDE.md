@@ -1,4 +1,4 @@
-# CivicLens - API Integration Guide
+﻿# CivicLens - API Integration Guide
 
 ## Overview
 
@@ -20,9 +20,9 @@ CivicLens integrates with three major Google Cloud services. This guide walks th
 ### Enable Authentication
 
 ```
-1. Left sidebar → Authentication
+1. Left sidebar ' Authentication
 2. Click "Get Started"
-3. Sign-in method → Google
+3. Sign-in method ' Google
 4. Enable toggle
 5. Add project name & support email
 6. Save
@@ -31,7 +31,7 @@ CivicLens integrates with three major Google Cloud services. This guide walks th
 ### Create Firestore Database
 
 ```
-1. Left sidebar → Firestore Database
+1. Left sidebar ' Firestore Database
 2. Click "Create Database"
 3. Select "Start in production mode"
 4. Select region (us-central1)
@@ -55,7 +55,7 @@ service cloud.firestore {
 ### Enable Cloud Storage
 
 ```
-1. Left sidebar → Storage
+1. Left sidebar ' Storage
 2. Click "Get Started"
 3. Start in production mode
 4. Select us-central1
@@ -78,7 +78,7 @@ service firebase.storage {
 ### Get Firebase Configuration
 
 ```
-1. Settings → Project Settings
+1. Settings ' Project Settings
 2. Scroll to "Your apps"
 3. Click Web icon (</> symbol)
 4. Register app: CivicLens
@@ -86,12 +86,12 @@ service firebase.storage {
 ```
 
 Extract these values for `.env`:
-- apiKey → VITE_FIREBASE_API_KEY
-- authDomain → VITE_FIREBASE_AUTH_DOMAIN
-- projectId → VITE_FIREBASE_PROJECT_ID
-- storageBucket → VITE_FIREBASE_STORAGE_BUCKET
-- messagingSenderId → VITE_FIREBASE_MESSAGING_SENDER_ID
-- appId → VITE_FIREBASE_APP_ID
+- apiKey ' VITE_FIREBASE_API_KEY
+- authDomain ' VITE_FIREBASE_AUTH_DOMAIN
+- projectId ' VITE_FIREBASE_PROJECT_ID
+- storageBucket ' VITE_FIREBASE_STORAGE_BUCKET
+- messagingSenderId ' VITE_FIREBASE_MESSAGING_SENDER_ID
+- appId ' VITE_FIREBASE_APP_ID
 
 Example:
 ```json
@@ -111,14 +111,14 @@ Example:
 
 ```
 1. Visit https://console.cloud.google.com
-2. Create new project → "CivicLens Maps"
+2. Create new project ' "CivicLens Maps"
 3. Wait for creation
 ```
 
 ### Enable Maps JavaScript API
 
 ```
-1. Top search bar → Search "Maps JavaScript API"
+1. Top search bar ' Search "Maps JavaScript API"
 2. Click the result
 3. Click "ENABLE"
 4. Wait for API to enable
@@ -127,8 +127,8 @@ Example:
 ### Create API Key
 
 ```
-1. Left sidebar → Credentials
-2. Click "Create Credentials" → API Key
+1. Left sidebar ' Credentials
+2. Click "Create Credentials" ' API Key
 3. Copy the generated key
 4. Add to .env as VITE_GOOGLE_MAPS_KEY
 ```
@@ -172,7 +172,7 @@ https://yourdomain.com/*
 
 ```
 1. Visit https://console.cloud.google.com
-2. Go to APIs & Services → Enabled APIs & services
+2. Go to APIs & Services ' Enabled APIs & services
 3. Search for "Generative Language API"
 4. Click "Enable"
 ```
@@ -180,7 +180,7 @@ https://yourdomain.com/*
 ### Check Quota Limits
 
 ```
-1. APIs & Services → Quotas
+1. APIs & Services ' Quotas
 2. Search "generative"
 3. View daily and per-minute limits
 4. Default: 60 requests per minute
@@ -300,14 +300,14 @@ console.log(db);  // Should print Firestore instance
 
 ### Firebase Console
 ```
-1. Firestore → Monitor tab
+1. Firestore ' Monitor tab
 2. View read/write operations
 3. Check quota usage
 ```
 
 ### Google Cloud Console
 ```
-1. APIs & Services → Dashboard
+1. APIs & Services ' Dashboard
 2. View API usage & quota
 3. Check recent errors
 ```
@@ -341,3 +341,7 @@ For production deployment:
 ---
 
 For more help, see main README.md and SETUP_GUIDE.md!
+
+
+
+

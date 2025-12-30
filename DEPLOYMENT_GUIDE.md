@@ -18,14 +18,13 @@ npm install
 
 # 3. Create .env file with your credentials
 cat > .env << EOF
-VITE_FIREBASE_API_KEY=AIzaSyDu-anXXXX
+
 VITE_FIREBASE_AUTH_DOMAIN=anish-baa94.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=anish-baa94
 VITE_FIREBASE_STORAGE_BUCKET=anish-baa94.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=XXXXXX
 VITE_FIREBASE_APP_ID=1:XXXXXX:web:XXXXXX
-VITE_GOOGLE_MAPS_KEY=AIzaSyA1cosF3fWj5dwHdEpHDhXfib1z0jKBZNg
-VITE_GEMINI_KEY=AIzaSyBft3PdM30yByWMpQuVJn93C43hsY_tdLw
+
 EOF
 
 # 4. Start development server

@@ -191,7 +191,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AuthProvider>
-          <Router>
+          {/* Use basename so routes work when served from /CivicLens/ on GitHub Pages */}
+          <Router basename={import.meta.env.BASE_URL}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />

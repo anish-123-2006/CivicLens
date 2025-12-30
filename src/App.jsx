@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Report from './pages/Report';
 import Success from './pages/Success';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminPanel from './pages/AdminPanel';
 import MyReports from './pages/MyReports';
 
 function usePersistentMode() {
@@ -206,6 +207,7 @@ function App() {
               />
               <Route path="/success" element={<Success />} />
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin-panel" element={<AdminPanel />} />
               <Route
                 path="/my-reports"
                 element={

@@ -201,6 +201,9 @@ const Home: React.FC = () => {
               '&:active': {
                 transform: 'scale(0.95)',
               },
+              '@media (max-width: 600px)': {
+                bottom: 80,
+              },
             }}
             onClick={() => navigate('/report')}
           >

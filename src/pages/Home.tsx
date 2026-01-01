@@ -37,17 +37,11 @@ const Home: React.FC = () => {
 
   // Request location permission on component mount
   React.useEffect(() => {
-    const locationPermissionAsked = localStorage.getItem('civiclens-location-asked');
-    if (locationPermissionAsked !== 'true') {
-      setLocationDialogOpen(true);
-    } else {
-      setLocationDialogOpen(false);
-    }
+    // Always show the location dialog on mount
+    setLocationDialogOpen(true);
   }, []);
 
   const handleLocationRequest = () => {
-    localStorage.setItem('civiclens-location-asked', 'true');
-    
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -68,7 +62,6 @@ const Home: React.FC = () => {
   };
 
   const handleLocationDeny = () => {
-    localStorage.setItem('civiclens-location-asked', 'true');
     setLocationDialogOpen(false);
   };
 

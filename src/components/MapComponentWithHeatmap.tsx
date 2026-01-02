@@ -86,6 +86,15 @@ const MapComponentWithHeatmap: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
+  // Keep selected report in sync with realtime updates
+  useEffect(() => {
+    if (!selectedReport) return;
+    const updated = reports.find((r) => r.id === selectedReport.id);
+    if (updated && updated !== selectedReport) {
+      setSelectedReport(updated);
+    }
+  }, [reports, selectedReport?.id]);
+
   const getMarkerColor = (severity: string) => {
     switch (severity.toLowerCase()) {
       case 'high':

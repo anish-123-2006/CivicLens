@@ -172,15 +172,10 @@ const MapComponent: React.FC = () => {
     setUpvotingId(reportId);
     try {
       await upvoteReport(reportId, user.uid);
-      // Update selected report if it's the one being upvoted
-      if (selectedReport?.id === reportId) {
-        const updatedReports = reports.find((r) => r.id === reportId);
-        if (updatedReports) {
-          setSelectedReport(updatedReports);
-        }
-      }
+      // Real-time listener will automatically update reports and selectedReport
     } catch (error) {
       console.error('Error upvoting:', error);
+      alert('Failed to save your upvote. Please check your connection and sign-in status.');
     } finally {
       setUpvotingId(null);
     }

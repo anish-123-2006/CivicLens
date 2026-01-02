@@ -55,6 +55,7 @@ const MapComponentWithHeatmap: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [upvotingId, setUpvotingId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'map' | 'heatmap'>('map');
+  const libraries = React.useMemo(() => ['visualization'], []);
 
   useEffect(() => {
     // Get user's location
@@ -204,14 +205,10 @@ const MapComponentWithHeatmap: React.FC = () => {
     setUpvotingId(reportId);
     try {
       await upvoteReport(reportId, user.uid);
-      if (selectedReport?.id === reportId) {
-        const updatedReports = reports.find((r) => r.id === reportId);
-        if (updatedReports) {
-          setSelectedReport(updatedReports);
-        }
-      }
+      // Real-time listener will automatically update reports and selectedReport
     } catch (error) {
       console.error('Error upvoting:', error);
+      alert('Failed to save your upvote. Please check your connection and sign-in status.');
     } finally {
       setUpvotingId(null);
     }
@@ -335,7 +332,7 @@ const MapComponentWithHeatmap: React.FC = () => {
 
       <LoadScript
         googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_KEY}
-        libraries={['visualization']}
+        libraries={libraries}
       >
         <GoogleMap
           mapContainerStyle={mapContainerStyle}

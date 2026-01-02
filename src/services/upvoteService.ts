@@ -1,4 +1,4 @@
-import { doc, updateDoc, arrayUnion, arrayRemove, getDoc } from 'firebase/firestore';
+import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebaseConfig';
 
 /**
@@ -14,21 +14,16 @@ export const upvoteReport = async (reportId: string, userId: string): Promise<bo
       throw new Error('Report not found');
     }
 
-    const upvotes = reportDoc.data().upvotes || [];
-    
-    if (upvotes.includes(userId)) {
-      // Remove upvote
-      await updateDoc(reportRef, {
-        upvotes: arrayRemove(userId),
-      });
-      return false; // Removed
-    } else {
-      // Add upvote
-      await updateDoc(reportRef, {
-        upvotes: arrayUnion(userId),
-      });
-      return true; // Added
-    }
+    const upvotes: string[] = reportDoc.data().upvotes || [];
+    const alreadyUpvoted = upvotes.includes(userId);
+    const nextUpvotes = alreadyUpvoted
+      ? upvotes.filter((id) => id !== userId)
+      : [...upvotes, userId];
+
+    // Write the full array
+    await updateDoc(reportRef, { upvotes: nextUpvotes });
+
+    return !alreadyUpvoted; // true when added, false when removed
   } catch (error) {
     console.error('Error updating upvote:', error);
     throw error;

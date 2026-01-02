@@ -157,10 +157,10 @@ const ReportComponent: React.FC = () => {
     setError('');
 
     try {
-      // Compress and convert image to base64
+      // Compress image aggressively to keep docs under 500KB (safe margin for upvotes)
       const imageUrl = await compressAndConvertToBase64(selectedFile);
 
-      // Save report to Firestore with base64 image
+      // Save report to Firestore with compressed base64 image
       const docRef = await addDoc(collection(db, 'reports'), {
         imageUrl,
         location,

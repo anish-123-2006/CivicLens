@@ -4,7 +4,7 @@
 
 /**
  * Compress image and convert to base64
- * Ensures the result stays under 1MB for Firestore storage
+ * Keeps result under 300KB to ensure Firestore docs stay well below 1MB (safe for upvotes)
  */
 export const compressAndConvertToBase64 = async (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
@@ -17,9 +17,9 @@ export const compressAndConvertToBase64 = async (file: File): Promise<string> =>
         const canvas = document.createElement('canvas');
         let { width, height } = img;
         
-        // Scale down if image is too large
-        const maxWidth = 1024;
-        const maxHeight = 1024;
+        // Scale down to smaller dimensions to reduce file size
+        const maxWidth = 640;
+        const maxHeight = 640;
         
         if (width > height) {
           if (width > maxWidth) {
@@ -44,14 +44,14 @@ export const compressAndConvertToBase64 = async (file: File): Promise<string> =>
         
         ctx.drawImage(img, 0, 0, width, height);
         
-        // Compress with progressive quality reduction
-        let quality = 0.8;
+        // Compress aggressively to stay under 300KB (safe for Firestore with upvotes)
+        let quality = 0.6; // Start lower
         let base64: string;
         
         do {
           base64 = canvas.toDataURL('image/jpeg', quality);
           quality -= 0.1;
-        } while (base64.length > 900000 && quality > 0.1); // Keep under ~900KB for safety
+        } while (base64.length > 280000 && quality > 0.1); // Keep under ~280KB for safety
         
         resolve(base64);
       };

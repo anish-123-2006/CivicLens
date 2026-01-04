@@ -22,6 +22,7 @@ import {
 } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import AdminRouteOptimizer from '../components/AdminRouteOptimizer';
 
 interface Report {
   id: string;
@@ -406,6 +407,8 @@ const AdminDashboard: React.FC = () => {
             }}
           />
         )}
+
+        <AdminRouteOptimizer />
 
         {/* Stats */}
         <Grid container spacing={2} sx={{ mb: 4 }}>

@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import MapComponentWithHeatmap from '../components/MapComponentWithHeatmap';
-import { seedSampleReports } from '../utils/seedData';
 import { ColorModeContext } from '../contexts/ColorModeContext.ts';
 import {
   AppBar,
@@ -26,25 +25,10 @@ const Home: React.FC = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [seeding, setSeeding] = React.useState(false);
   const { toggleColorMode, mode } = React.useContext(ColorModeContext);
   const [userLocation, setUserLocation] = React.useState<{ latitude: number; longitude: number } | null>(null);
 
-  // Automatically request location on component mount
-  React.useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setUserLocation({ latitude, longitude });
-          console.log('Location enabled:', latitude, longitude);
-        },
-        (error) => {
-          console.log('Location access:', error.message);
-        }
-      );
-    }
-  }, []);
+  // Location is now only requested when user clicks "Locate Me" button
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -58,23 +42,6 @@ const Home: React.FC = () => {
     await signOut();
     handleClose();
     navigate('/login');
-  };
-
-  const handleSeedData = async () => {
-    if (!user) {
-      alert('Please sign in first');
-      return;
-    }
-    setSeeding(true);
-    try {
-      await seedSampleReports(user.uid);
-      alert('✅ Successfully seeded 30 sample reports!');
-    } catch (error) {
-      alert('❌ Error seeding data. Check console.');
-      console.error(error);
-    } finally {
-      setSeeding(false);
-    }
   };
 
   return (
@@ -155,9 +122,6 @@ const Home: React.FC = () => {
                 </MenuItem>
                 <MenuItem onClick={() => { navigate('/admin'); handleClose(); }}>
                   <AdminPanelSettingsIcon sx={{ mr: 1, fontSize: 18 }} /> Admin Panel
-                </MenuItem>
-                <MenuItem onClick={handleSeedData} disabled={seeding}>
-                  {seeding ? 'Seeding...' : '🌱 Seed Demo Data'}
                 </MenuItem>
                 <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
               </Menu>

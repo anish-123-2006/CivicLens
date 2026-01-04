@@ -46,7 +46,7 @@ const AdminRouteOptimizer: React.FC = () => {
   const [hqPoint, setHqPoint] = useState(MUNICIPAL_OFFICE);
   const [lastFetchCount, setLastFetchCount] = useState(0);
   const mapRef = useRef<google.maps.Map | null>(null);
-  const animFrameRef = useRef<number>();
+  const animFrameRef = useRef<number | null>(null);
 
   const center = useMemo(() => {
     if (reports.length > 0) {

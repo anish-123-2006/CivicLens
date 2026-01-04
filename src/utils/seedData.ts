@@ -15,15 +15,28 @@ const CATEGORIES = [
 
 const SEVERITIES = ['low', 'medium', 'high'];
 
+// New Delhi locations (spread across the city)
 const LOCATIONS = [
-  { lat: 24.4803, lng: 72.7828, name: 'Abu Road, Santopur' },
-  { lat: 24.4850, lng: 72.7900, name: 'Main Street' },
-  { lat: 24.4750, lng: 72.7750, name: 'Market Area' },
-  { lat: 24.4900, lng: 72.8000, name: 'Highway Junction' },
-  { lat: 24.4700, lng: 72.7650, name: 'Downtown' },
-  { lat: 24.4950, lng: 72.7950, name: 'Park Road' },
-  { lat: 24.4650, lng: 72.7700, name: 'School Street' },
-  { lat: 24.4875, lng: 72.7825, name: 'Business District' },
+  { lat: 28.6139, lng: 77.2090, name: 'Connaught Place' },
+  { lat: 28.6562, lng: 77.2410, name: 'Kashmere Gate' },
+  { lat: 28.6692, lng: 77.4538, name: 'Noida Sector 18' },
+  { lat: 28.5355, lng: 77.3910, name: 'Nehru Place' },
+  { lat: 28.5494, lng: 77.2501, name: 'Saket' },
+  { lat: 28.7041, lng: 77.1025, name: 'Rohini' },
+  { lat: 28.4595, lng: 77.0266, name: 'Gurgaon' },
+  { lat: 28.6304, lng: 77.2177, name: 'India Gate' },
+  { lat: 28.5244, lng: 77.1855, name: 'Hauz Khas' },
+  { lat: 28.5355, lng: 77.2635, name: 'Lajpat Nagar' },
+  { lat: 28.6692, lng: 77.2315, name: 'Chandni Chowk' },
+  { lat: 28.5706, lng: 77.3272, name: 'Mayur Vihar' },
+  { lat: 28.6139, lng: 77.2295, name: 'Barakhamba Road' },
+  { lat: 28.5921, lng: 77.0460, name: 'Dwarka' },
+  { lat: 28.5672, lng: 77.2100, name: 'Green Park' },
+  { lat: 28.5383, lng: 77.1250, name: 'Vasant Kunj' },
+  { lat: 28.6280, lng: 77.3648, name: 'Preet Vihar' },
+  { lat: 28.6448, lng: 77.2167, name: 'Rajiv Chowk' },
+  { lat: 28.5494, lng: 77.1960, name: 'Malviya Nagar' },
+  { lat: 28.6692, lng: 77.4371, name: 'Ghaziabad' },
 ];
 
 const DESCRIPTIONS = [
@@ -53,14 +66,14 @@ const SAMPLE_IMAGES = [
 
 export const seedSampleReports = async (userId: string) => {
   try {
-    console.log('🌱 Starting to seed 30 sample reports...');
+    console.log('🌱 Starting to seed 60 sample reports...');
     let successCount = 0;
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 60; i++) {
       const location = LOCATIONS[i % LOCATIONS.length];
       // Add slight variation to coordinates for nearby reports
-      const offsetLat = location.lat + (Math.random() - 0.5) * 0.001;
-      const offsetLng = location.lng + (Math.random() - 0.5) * 0.001;
+      const offsetLat = location.lat + (Math.random() - 0.5) * 0.01;
+      const offsetLng = location.lng + (Math.random() - 0.5) * 0.01;
 
       const report = {
         category: CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)],
@@ -78,10 +91,10 @@ export const seedSampleReports = async (userId: string) => {
 
       await addDoc(collection(db, 'reports'), report);
       successCount++;
-      console.log(`✅ Added report ${successCount}/30`);
+      console.log(`✅ Added report ${successCount}/60`);
     }
 
-    console.log('🎉 Successfully seeded 30 sample reports!');
+    console.log('🎉 Successfully seeded 60 sample reports!');
     return { success: true, count: successCount };
   } catch (error) {
     console.error('❌ Error seeding reports:', error);

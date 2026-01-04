@@ -234,6 +234,10 @@ const MapComponentWithHeatmap: React.FC = () => {
             transform: 'translateY(-2px)',
             boxShadow: '0 16px 50px rgba(0,0,0,0.35)',
           },
+          '@media (max-width: 600px)': {
+            top: 'max(16px, env(safe-area-inset-top))',
+            left: 8,
+          },
         }}
       >
         <ToggleButtonGroup
@@ -310,6 +314,12 @@ const MapComponentWithHeatmap: React.FC = () => {
             boxShadow: '0 10px 40px rgba(0,0,0,0.25)',
             backdropFilter: 'blur(12px)',
             borderRadius: 2,
+            '@media (max-width: 600px)': {
+              top: 'max(16px, env(safe-area-inset-top))',
+              right: 8,
+              maxWidth: 200,
+              p: 1.5,
+            },
           }}
         >
           <Typography variant="subtitle2" sx={{ fontWeight: 'bold', mb: 1 }}>

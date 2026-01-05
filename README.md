@@ -1,6 +1,26 @@
-﻿# CivicLens - AI-Powered Civic Issue Reporting PWA
+# CivicLens – AI Powered Civic Issue Reporting PWA
 
-A Progressive Web App that empowers citizens to report civic issues (potholes, garbage, broken infrastructure) using AI-powered image analysis and real-time mapping.
+Live Demo: https://anish-123-2006.github.io/CivicLens/
+
+CivicLens is a Progressive Web App that allows citizens to report civic issues such as potholes, garbage accumulation, and damaged infrastructure using image-based AI analysis and real-time location data.
+
+The goal of CivicLens is to make civic issue reporting simple for citizens and more efficient for municipal authorities.
+
+---
+
+## Problem Statement
+
+In many cities, civic issues are either underreported or resolved inefficiently due to manual reporting systems, lack of real-time visibility, and poor coordination between citizens and authorities. This often leads to delayed action, misallocation of resources, and a decline in public infrastructure quality.
+
+---
+
+## Proposed Solution
+
+CivicLens provides a digital platform where citizens can report issues by uploading images and location data. AI is used to automatically analyze and categorize issues, while a map-based dashboard gives authorities a real-time view of reported problems.
+
+An admin-focused smart routing feature helps municipal teams plan efficient field operations based on issue severity, location, and priority.
+
+---
 
 
 ## Features

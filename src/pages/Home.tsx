@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import MapComponentWithHeatmap from '../components/MapComponentWithHeatmap';
 import { ColorModeContext } from '../contexts/ColorModeContext.ts';
+import civicLensLogo from '../assets/civiclens-logo.svg';
 import {
   AppBar,
   Toolbar,
@@ -61,25 +62,23 @@ const Home: React.FC = () => {
         }}
       >
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
+          <Box
             sx={{
               flexGrow: 1,
-              fontWeight: 800,
-              fontSize: '1.5rem',
-              letterSpacing: 1,
-              background: (theme) =>
-                theme.palette.mode === 'dark'
-                  ? 'linear-gradient(135deg, #e8eef7 0%, #7c8ff0 100%)'
-                  : 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            CivicLens
-          </Typography>
+            <img
+              src={civicLensLogo}
+              alt="CivicLens"
+              style={{
+                height: '50px',
+                width: 'auto',
+                filter: mode === 'dark' ? 'brightness(1.2)' : 'none',
+              }}
+            />
+          </Box>
 
           <IconButton
             color="inherit"

@@ -127,17 +127,23 @@ Traditional platforms are complaint repositories. CivicLens is:
 - **True Marketplace**: Both sides benefit
 
 ### **Innovation Highlights**
-- AI-powered image analysis (no manual categorization)
-- Social media integration (instant awareness)
-- Heat maps (data visualization for policy makers)
-- Voice input (accessibility for all)
-- Admin dashboard (government accountability)
+ - **Smart Routing for Field Teams**: Admins get optimized routes for municipal teams, prioritizing issues by severity, upvotes, and proximity. Enables efficient real-world resolution directly from the dashboard.
 
-### **Scalability & Real-World Impact**
+## **Phase 4: Technical Excellence**
 - Works for any civic issue (pothole, garbage, flooding, etc.)
-- Scalable to any city/country
-- Data insights for urban planning
-- Budget allocation based on issue concentration
+  **Firestore Real-Time Listeners**: Instant map updates
+ " **Live Upvote Counts**: See community validation in real-time
+ " **Optimistic Updates**: Smooth UX with instant feedback
+
+---
+
+## **Phase 5: Smart Routing (NEW)**
+
+### **11. Smart Routing for Municipal Teams**
+ - **Route Optimization**: Admin dashboard suggests the most efficient route for field teams to resolve reported issues
+ - **Prioritization**: Routes are calculated based on severity, upvotes, and proximity
+ - **Visualization**: Optimal route is displayed on the admin map for easy navigation
+ - **Impact**: Reduces response time and increases operational efficiency for city services
 
 ---
 

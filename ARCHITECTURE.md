@@ -57,11 +57,12 @@
              """- /reports/[timestamp]_[filename].jpg
 ```
 
+
 ## Component Hierarchy
 
 ```
 App (Main Router)
-"
+" 
 "" Theme Provider
 "  """ Auth Provider
 "     "
@@ -98,6 +99,11 @@ App (Main Router)
 "              "  "" Severity
 "              "  """ Description
 "              """ Submit Button
+"     "
+"     "" Route: /admin (Protected)
+"        """ AdminDashboard
+"           """ AdminRouteOptimizer (Smart Routing)
+"              "" Optimized route suggestions for municipal teams
 ```
 
 ## Data Flow Diagram
@@ -181,22 +187,19 @@ USER CAPTURES/UPLOADS IMAGE
    """"""""""""""""""""
 ```
 
+
 ## Route Structure
 
 ```
-/
-"" / (Home)
-"  "" Requires: Anyone (public)
-"  """ Shows: Map with all reports
-"
-"" /login (Login)
-"  "" Requires: Anyone (public)
-"  """ Shows: Google Sign-in button
-"
-""" /report (Report)
-   "" Requires: Authentication
-   "" Redirect: Not logged in ' /login
-   """ Shows: Image capture & submission form
+/              (Home)
+       - Public: Shows map with all reports
+/login        (Login)
+       - Public: Google Sign-in
+/report       (Report)
+       - Protected: Image capture & submission form
+/admin        (Admin Dashboard)
+       - Protected: Admin-only
+       - Shows: Kanban board, Smart Routing (route optimizer for municipal teams)
 ```
 
 ## State Management Flow
@@ -363,6 +366,11 @@ USER CAPTURES/UPLOADS IMAGE
 ```
 
 ---
+
+
+---
+
+**Smart Routing** is a core part of the admin dashboard. It leverages report data (severity, upvotes, location) and Google Maps Directions API to suggest optimal routes for municipal field teams. This enables efficient resource allocation and faster issue resolution, directly from the admin interface.
 
 This architecture ensures:
 - Security through multi-layer authentication

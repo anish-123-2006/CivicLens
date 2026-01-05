@@ -2,15 +2,18 @@
 
 A Progressive Web App that empowers citizens to report civic issues (potholes, garbage, broken infrastructure) using AI-powered image analysis and real-time mapping.
 
+
 ## Features
 
 - **AI-Powered Analysis**: Uses Google Gemini AI to automatically analyze images and categorize civic issues
 - **Real-time Map Dashboard**: Interactive Google Maps interface showing all reported issues with color-coded severity markers
+- **Smart Routing**: Optimizes and suggests the most efficient route for municipal teams to address reported issues, factoring in severity, location, and upvotes. Admins can view and manage optimal routes for field operations.
 - **Google Authentication**: Secure sign-in with Google accounts
 - **Camera/Upload**: Capture photos directly or upload from device
 - **Auto-location**: Automatically captures GPS coordinates for each report
 - **Responsive Design**: Mobile-first design using Material UI
 - **PWA Ready**: Installable as a mobile app
+
 
 ## Tech Stack
 
@@ -20,6 +23,7 @@ A Progressive Web App that empowers citizens to report civic issues (potholes, g
 - **Maps**: Google Maps API via @react-google-maps/api
 - **AI**: Google Gemini API (Generative AI)
 - **Routing**: React Router DOM
+- **Smart Routing**: Custom route optimization logic for municipal teams, leveraging report data and Google Maps Directions API (admin dashboard only)
 
 ## Prerequisites
 
@@ -117,19 +121,25 @@ The app will be available at `http://localhost:5173`
 
 ## +/- Usage Guide
 
+
 ### For Users:
 
 1. **Sign In**: Click "Sign in with Google" on the login page
 2. **View Map**: See all reported civic issues on the interactive map
-   - Red markers = High severity
-   - Orange markers = Medium severity
-   - Yellow markers = Low severity
+  - Red markers = High severity
+  - Orange markers = Medium severity
+  - Yellow markers = Low severity
 3. **Report Issue**: 
-   - Click the "+" button (bottom right)
-   - Take a photo or upload an image
-   - AI will automatically analyze and categorize the issue
-   - Review and edit if needed
-   - Submit to add to the public map
+  - Click the "+" button (bottom right)
+  - Take a photo or upload an image
+  - AI will automatically analyze and categorize the issue
+  - Review and edit if needed
+  - Submit to add to the public map
+4. **(For Admins) Smart Routing**:
+  - Access the Admin Dashboard
+  - View optimized routes for field teams based on live reports
+  - Routes are prioritized by severity, upvotes, and proximity
+  - Use suggested routes to efficiently resolve issues in the field
 
 ### For Developers:
 
@@ -166,6 +176,7 @@ npm run lint
 }
 ```
 
+
 ## Key Components
 
 - **AuthContext**: Manages authentication state
@@ -173,6 +184,7 @@ npm run lint
 - **ReportComponent**: Handles image capture and AI analysis
 - **ProtectedRoute**: Guards routes requiring authentication
 - **geminiService**: Interfaces with Google Gemini AI
+- **AdminRouteOptimizer**: Provides Smart Routing logic and UI for admins to view and manage optimal routes for municipal teams
 
 ## Security Notes
 

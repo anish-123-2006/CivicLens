@@ -73,6 +73,7 @@ vite-project/
 
 ```
 
+
 ## Core Features Implemented
 
 ### 1. Authentication
@@ -103,6 +104,12 @@ vite-project/
 - Color-coded severity (Red/Orange/Yellow)
 - Info windows with image preview
 
+### 5. Smart Routing (NEW)
+- **File**: [src/components/AdminRouteOptimizer.tsx](src/components/AdminRouteOptimizer.tsx)
+- Admin dashboard suggests optimal routes for municipal teams
+- Routes are prioritized by severity, upvotes, and proximity
+- Visualizes the most efficient path for field operations
+
 ### 5. Backend Integration
 - **File**: [src/config/firebaseConfig.ts](src/config/firebaseConfig.ts)
 - Firestore for data storage
@@ -125,6 +132,7 @@ vite-project/
 | **Styling** | Emotion CSS-in-JS |
 | **Backend** | Firebase (Firestore, Auth, Storage) |
 | **Maps** | Google Maps API |
+| **Smart Routing** | Custom route optimizer (admin dashboard) leveraging Google Maps Directions API and report data |
 | **AI** | Google Gemini API |
 | **Routing** | React Router DOM |
 | **Language** | TypeScript |
@@ -258,6 +266,7 @@ Can be containerized for any cloud platform
 - **Google Maps**: https://developers.google.com/maps
 - **Gemini API**: https://ai.google.dev
 
+
 ## What Makes This Great
 
 - **Production Quality**: Enterprise-grade code structure
@@ -265,6 +274,7 @@ Can be containerized for any cloud platform
 - **Mobile First**: PWA with offline support
 - **AI Integration**: Advanced image analysis
 - **Real-time**: Live map updates via Firestore
+- **Smart Routing**: Field teams resolve issues faster with optimized routes, managed directly from the admin dashboard
 - **Secure**: Authentication & authorized access
 - **Documented**: Comprehensive guides included
 - **Scalable**: Ready for thousands of users

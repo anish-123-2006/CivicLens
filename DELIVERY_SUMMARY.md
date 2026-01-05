@@ -49,6 +49,7 @@ A **complete, production-ready Progressive Web App** for reporting civic issues 
 
 ---
 
+
 ## Features Delivered
 
 ### Authentication
@@ -88,6 +89,11 @@ A **complete, production-ready Progressive Web App** for reporting civic issues 
 - [x] Image preview in popup
 - [x] Auto-refresh via Firestore
 
+### Smart Routing (NEW)
+- [x] Route optimization for municipal teams (admin dashboard)
+- [x] Suggests most efficient path to resolve issues based on severity, upvotes, and proximity
+- [x] Visualizes optimal route on map for field operations
+
 ### Backend
 - [x] Firestore database
 - [x] Cloud Storage
@@ -117,12 +123,14 @@ A **complete, production-ready Progressive Web App** for reporting civic issues 
 ## Technology Stack
 
 ```
+
 Frontend
 "" React 18 + TypeScript
 "" Vite (fast build tool)
 "" Material UI (component library)
 "" React Router (navigation)
 """ Emotion (styling)
+"" Smart Routing (admin dashboard): Custom route optimizer using Google Maps Directions API and report data
 
 Backend Services
 "" Firebase Auth (Google Sign-in)
@@ -277,6 +285,7 @@ Security Audit:
 
 ## What Makes This Special
 
+
 ### Complete Solution
 - Everything included (no external dependencies)
 - All documentation provided
@@ -296,6 +305,10 @@ Security Audit:
 - Type definitions
 - Utility functions
 - Test utilities
+
+### Smart Routing Advantage
+- Field teams can resolve issues faster with optimized routes
+- Admins can visualize and manage municipal operations efficiently
 
 ### Production Ready
 - No placeholder code

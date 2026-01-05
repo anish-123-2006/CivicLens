@@ -1,0 +1,29 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular radar/target icon -->
+  <g transform="translate(256, 256)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#003d5c" stroke-width="12"/>
+    
+    <!-- Second circle -->
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#2a8ba8" stroke-width="10"/>
+    
+    <!-- Third circle -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#4db8d8" stroke-width="8"/>
+    
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#6dd4d8" stroke-width="6"/>
+    
+    <!-- Crosshairs -->
+    <line x1="0" y1="-200" x2="0" y2="200" stroke="#003d5c" stroke-width="10"/>
+    <line x1="-200" y1="0" x2="200" y2="0" stroke="#003d5c" stroke-width="10"/>
+    
+    <!-- Location pin in center -->
+    <path d="M 0,-70 C -25,-70 -45,-50 -45,-25 C -45,0 0,50 0,50 C 0,50 45,0 45,-25 C 45,-50 25,-70 0,-70 Z" 
+          fill="#4db8d8" stroke="#003d5c" stroke-width="3"/>
+    <circle cx="0" cy="-25" r="13" fill="#003d5c"/>
+    
+    <!-- Accent arcs -->
+    <path d="M -141,-141 A 200 200 0 0 1 -200,0" fill="none" stroke="#6dd4d8" stroke-width="6" opacity="0.7"/>
+    <path d="M 141,141 A 200 200 0 0 1 200,0" fill="none" stroke="#6dd4d8" stroke-width="6" opacity="0.7"/>
+  </g>
+</svg>

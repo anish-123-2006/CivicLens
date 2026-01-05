@@ -1,0 +1,32 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular radar/target icon -->
+  <g transform="translate(150, 150)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#003d5c" stroke-width="8"/>
+    
+    <!-- Second circle -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#2a8ba8" stroke-width="6"/>
+    
+    <!-- Third circle -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#4db8d8" stroke-width="5"/>
+    
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#6dd4d8" stroke-width="4"/>
+    
+    <!-- Crosshairs -->
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#003d5c" stroke-width="6"/>
+    <line x1="-120" y1="0" x2="120" y0="0" stroke="#003d5c" stroke-width="6"/>
+    
+    <!-- Location pin in center -->
+    <path d="M 0,-40 C -15,-40 -25,-30 -25,-15 C -25,0 0,30 0,30 C 0,30 25,0 25,-15 C 25,-30 15,-40 0,-40 Z" 
+          fill="#4db8d8" stroke="#003d5c" stroke-width="2"/>
+    <circle cx="0" cy="-15" r="8" fill="#003d5c"/>
+    
+    <!-- Accent arcs -->
+    <path d="M -85,-85 A 120 120 0 0 1 -120,0" fill="none" stroke="#6dd4d8" stroke-width="4" opacity="0.7"/>
+    <path d="M 85,85 A 120 120 0 0 1 120,0" fill="none" stroke="#6dd4d8" stroke-width="4" opacity="0.7"/>
+  </g>
+  
+  <!-- CivicLens text -->
+  <text x="320" y="180" font-family="'Segoe UI', Arial, sans-serif" font-size="120" font-weight="700" fill="#003d5c">CivicLens</text>
+</svg>

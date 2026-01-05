@@ -1,6 +1,5 @@
 ﻿# CivicLens - AI-Powered Civic Issue Reporting Platform
 
-**Submitted for: 13-Day Online Hackathon**
 
 > *Empowering citizens to report civic issues, validate community problems, and hold municipalities accountable through AI-powered analysis and transparent action tracking.*
 

@@ -132,7 +132,7 @@ const MapComponent: React.FC = () => {
   };
 
   // Offset nearby markers so they don't overlap
-  const getOffsetPosition = (report: Report, index: number, allReports: Report[]) => {
+  const getOffsetPosition = (report: Report, allReports: Report[]) => {
     const PROXIMITY_THRESHOLD = 0.0005; // ~50 meters at equator
     const OFFSET = 0.00015; // ~15 meters
 
@@ -212,7 +212,7 @@ const MapComponent: React.FC = () => {
         {reports.map((report) => (
           <Marker
             key={report.id}
-            position={getOffsetPosition(report, reports.indexOf(report), reports)}
+            position={getOffsetPosition(report, reports)}
             onClick={() => setSelectedReport(report)}
             icon={{
               url: getMarkerColor(report.severity),

@@ -451,7 +451,6 @@ const MyReports: React.FC = () => {
       </Box>
       </Container>
     </Box>
-    </Box>
   );
 };
 

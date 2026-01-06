@@ -43,8 +43,8 @@ const mapContainerStyle = {
 };
 
 const defaultCenter = {
-  lat: 40.7128,
-  lng: -74.006,
+  lat: 24.4755,
+  lng: 72.7754,
 };
 
 const MapComponent: React.FC = () => {

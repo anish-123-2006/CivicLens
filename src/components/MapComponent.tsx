@@ -13,8 +13,14 @@ import {
   CardContent,
   Chip,
   Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from '@mui/material';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import LocationOffIcon from '@mui/icons-material/LocationOff';
 
 interface Report {
   id: string;
@@ -48,6 +54,7 @@ const MapComponent: React.FC = () => {
   const [userLocation, setUserLocation] = useState(defaultCenter);
   const [loading, setLoading] = useState(true);
   const [upvotingId, setUpvotingId] = useState<string | null>(null);
+  const [locationErrorOpen, setLocationErrorOpen] = useState(false);
 
   useEffect(() => {
     // Get user's location
@@ -61,8 +68,18 @@ const MapComponent: React.FC = () => {
         },
         (error) => {
           console.error('Error getting location:', error);
+          // Show dialog when GeolocationPositionError occurs
+          if (error.code === error.PERMISSION_DENIED || 
+              error.code === error.POSITION_UNAVAILABLE || 
+              error.code === error.TIMEOUT) {
+            setLocationErrorOpen(true);
+          }
         }
       );
+    } else {
+      // Geolocation not supported
+      console.error('Geolocation is not supported by this browser.');
+      setLocationErrorOpen(true);
     }
 
     // Subscribe to reports
@@ -255,6 +272,37 @@ const MapComponent: React.FC = () => {
           </InfoWindow>
         )}
       </GoogleMap>
+
+      {/* Location Error Dialog */}
+      <Dialog
+        open={locationErrorOpen}
+        onClose={() => setLocationErrorOpen(false)}
+        aria-labelledby="location-error-dialog-title"
+        aria-describedby="location-error-dialog-description"
+      >
+        <DialogTitle id="location-error-dialog-title" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <LocationOffIcon color="error" />
+          Location Access Required
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="location-error-dialog-description">
+            To show your current location on the map, please enable location access in your browser settings.
+            <br /><br />
+            <strong>How to enable:</strong>
+            <br />
+            • Click the location icon in your browser's address bar
+            <br />
+            • Select "Allow" to grant location access
+            <br />
+            • Refresh the page if needed
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setLocationErrorOpen(false)} color="primary" variant="contained">
+            Got it
+          </Button>
+        </DialogActions>
+      </Dialog>
     </LoadScript>
   );
 };

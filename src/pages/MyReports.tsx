@@ -16,12 +16,13 @@ import {
   CircularProgress,
   Button,
   Divider,
-  Alert,
   Grid,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 interface Report {
   id: string;
@@ -172,9 +173,72 @@ const MyReports: React.FC = () => {
           </Typography>
         </Box>
 
-        {/* Statistics Cards */}
-        <Grid container spacing={2} sx={{ mb: 4 }}>
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+        {/* Empty State */}
+        {reports.length === 0 ? (
+          <Paper
+            elevation={0}
+            sx={{
+              p: 6,
+              textAlign: 'center',
+              background: (theme) =>
+                theme.palette.mode === 'dark'
+                  ? 'rgba(124, 143, 240, 0.05)'
+                  : 'rgba(102, 126, 234, 0.05)',
+              border: (theme) =>
+                theme.palette.mode === 'dark'
+                  ? '2px dashed rgba(124, 143, 240, 0.3)'
+                  : '2px dashed rgba(102, 126, 234, 0.3)',
+              borderRadius: 3,
+              animation: 'fadeInUp 0.6s ease-out',
+            }}
+          >
+            <ReportProblemOutlinedIcon
+              sx={{
+                fontSize: 80,
+                color: 'primary.main',
+                opacity: 0.6,
+                mb: 2,
+              }}
+            />
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
+              No Reports Yet
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 500, mx: 'auto' }}>
+              You haven't reported any civic issues yet. Start making a difference in your community by reporting your first issue!
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              startIcon={<AddCircleOutlineIcon />}
+              onClick={() => navigate('/report')}
+              sx={{
+                px: 4,
+                py: 1.5,
+                borderRadius: 2,
+                fontSize: '1rem',
+                fontWeight: 700,
+                background: (theme) =>
+                  theme.palette.mode === 'dark'
+                    ? 'linear-gradient(135deg, #7c8ff0 0%, #b08cf5 100%)'
+                    : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: (theme) =>
+                    theme.palette.mode === 'dark'
+                      ? '0 8px 25px rgba(124, 143, 240, 0.4)'
+                      : '0 8px 25px rgba(102, 126, 234, 0.4)',
+                },
+              }}
+            >
+              Report Your First Issue
+            </Button>
+          </Paper>
+        ) : (
+          <>
+            {/* Statistics Cards */}
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Paper
               sx={{
                 p: 3,
@@ -281,18 +345,12 @@ const MyReports: React.FC = () => {
           </Grid>
         </Grid>
 
-      <Divider sx={{ mb: 3 }} />
+            <Divider sx={{ mb: 3 }} />
 
-      {/* Reports List */}
-      {reports.length === 0 ? (
-        <Alert severity="info">
-          You haven't submitted any reports yet. Click the "+" button on the map to report your
-          first civic issue!
-        </Alert>
-      ) : (
-        <Grid container spacing={3}>
-          {reports.map((report) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={report.id}>
+            {/* Reports List */}
+            <Grid container spacing={3}>
+              {reports.map((report) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={report.id}>
               <Card
                 sx={{
                   height: '100%',
@@ -361,9 +419,10 @@ const MyReports: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-          ))}
-        </Grid>
-      )}
+              ))}
+            </Grid>
+          </>
+        )}
 
       {/* Bottom Action */}
       <Box sx={{ mt: 4, textAlign: 'center' }}>
@@ -391,6 +450,7 @@ const MyReports: React.FC = () => {
         </Button>
       </Box>
       </Container>
+    </Box>
     </Box>
   );
 };

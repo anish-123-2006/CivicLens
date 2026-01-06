@@ -14,9 +14,7 @@ import {
   Avatar,
   Menu,
   MenuItem,
-  Fab,
 } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -27,7 +25,6 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const { toggleColorMode, mode } = React.useContext(ColorModeContext);
-  const [userLocation, setUserLocation] = React.useState<{ latitude: number; longitude: number } | null>(null);
 
   // Location is now only requested when user clicks "Locate Me" button
 
@@ -80,20 +77,38 @@ const Home: React.FC = () => {
             />
           </Box>
 
-          <IconButton
-            color="inherit"
-            onClick={toggleColorMode}
-            sx={{
-              mr: user ? 1 : 0,
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'rotate(20deg) scale(1.1)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              },
-            }}
-          >
-            {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-          </IconButton>
+          {user && (
+            <Button
+              variant="contained"
+              aria-label="report issue"
+              sx={{
+                mr: 2,
+                px: 2,
+                py: 0.8,
+                borderRadius: 1.5,
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.4px',
+                background: (theme) =>
+                  theme.palette.mode === 'dark'
+                    ? 'linear-gradient(135deg, #7c8ff0 0%, #b08cf5 100%)'
+                    : 'rgba(255, 255, 255, 0.25)',
+                color: 'white',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  background: (theme) =>
+                    theme.palette.mode === 'dark'
+                      ? 'linear-gradient(135deg, #9db4ff 0%, #c5b3ff 100%)'
+                      : 'rgba(255, 255, 255, 0.35)',
+                  transform: 'translateY(-2px)',
+                },
+              }}
+              onClick={() => navigate('/report')}
+            >
+              Report Issue
+            </Button>
+          )}
 
           {user && (
             <>
@@ -136,43 +151,49 @@ const Home: React.FC = () => {
 
       <Box sx={{ flex: 1, position: 'relative' }}>
         <MapComponentWithHeatmap />
-        {user && (
-          <Fab
-            color="primary"
-            aria-label="add report"
-            sx={{
-              position: 'absolute',
-              bottom: 16,
-              right: 16,
-              background: (theme) =>
+        <IconButton
+          color="inherit"
+          onClick={toggleColorMode}
+          sx={{
+            position: 'absolute',
+            bottom: 16,
+            left: 16,
+            size: 'large',
+            width: 56,
+            height: 56,
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'dark'
+                ? '#2a2a2a'
+                : '#ffffff',
+            color: (theme) =>
+              theme.palette.mode === 'dark'
+                ? '#ffd54f'
+                : '#667eea',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+            border: (theme) =>
+              theme.palette.mode === 'dark'
+                ? '3px solid #444444'
+                : '3px solid white',
+            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            '&:hover': {
+              backgroundColor: (theme) =>
                 theme.palette.mode === 'dark'
-                  ? 'linear-gradient(135deg, #7c8ff0 0%, #b08cf5 100%)'
-                  : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              boxShadow: (theme) =>
-                theme.palette.mode === 'dark'
-                  ? '0 12px 40px rgba(124, 143, 240, 0.35)'
-                  : '0 12px 40px rgba(102, 126, 234, 0.4)',
-              animation: 'bounce 2s ease-in-out infinite',
-              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              '&:hover': {
-                transform: 'scale(1.15)',
-                boxShadow: (theme) =>
-                  theme.palette.mode === 'dark'
-                    ? '0 20px 50px rgba(124, 143, 240, 0.5)'
-                    : '0 20px 50px rgba(102, 126, 234, 0.6)',
-              },
-              '&:active': {
-                transform: 'scale(0.95)',
-              },
-              '@media (max-width: 600px)': {
-                bottom: 80,
-              },
-            }}
-            onClick={() => navigate('/report')}
-          >
-            <AddIcon sx={{ fontSize: 28 }} />
-          </Fab>
-        )}
+                  ? '#2a2a2a'
+                  : '#ffffff',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+            },
+            '&:active': {
+              transform: 'scale(0.95)',
+            },
+            '@media (max-width: 600px)': {
+              bottom: 140,
+              width: 50,
+              height: 50,
+            },
+          }}
+        >
+          {mode === 'dark' ? <LightModeIcon sx={{ fontSize: 28 }} /> : <DarkModeIcon sx={{ fontSize: 28 }} />}
+        </IconButton>
       </Box>
     </Box>
   );
